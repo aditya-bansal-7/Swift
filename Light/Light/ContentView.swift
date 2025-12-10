@@ -8,14 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var light: Bool = false
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        
+        Color.init(light ? .blue : .black)
+        
+        Button("Switch \(light ? "Off" : "On")"){
+            light = !light
         }
-        .padding()
+        
     }
 }
 
